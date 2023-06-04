@@ -1,0 +1,5 @@
+project: bic
+target: gentree
+
+cmds:
+  - cmd: /bic/src/gentree @@

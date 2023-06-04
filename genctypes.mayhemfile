@@ -1,5 +1,0 @@
-project: bic
-target: genctypes
-
-cmds:
-  - cmd: /bic/src/genctypes @@
