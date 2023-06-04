@@ -8,7 +8,7 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   GENACCESS_MAYHEMFILE: genaccess.mayhemfile
-  GENCTYPES_MAYHEMFILE: genctypes.mayhemfile
+  GENTREE_MAYHEMFILE: gentree.mayhemfile
 
 jobs:
   build:
@@ -57,11 +57,11 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.GENACCESS_MAYHEMFILE }}
           sarif-output: sarif
-      - name: Start analysis for genctypes
+      - name: Start analysis for gentree
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.GENCTYPES_MAYHEMFILE }}
+          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.GENTREE_MAYHEMFILE }}
           sarif-output: sarif
 
       - name: Upload SARIF file(s)
