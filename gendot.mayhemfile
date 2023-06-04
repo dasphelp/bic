@@ -1,5 +1,0 @@
-project: bic
-target: gendot
-
-cmds:
-  - cmd: /bic/src/gendot @@
